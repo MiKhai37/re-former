@@ -1,10 +1,11 @@
-<h1>New User: </h1>
+<h1>Username: <%= @user.username %></h1>
+<h3>ID: <%= @user.id %></h3>
 
 <%= form_with model: @user do |form| %>
 
   <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2>Something wrong happend while trying to create this user:</h2>
+      <h2>Something wrong happend while trying to edit this user:</h2>
 
       <ul>
         <% @user.errors.each do |error| %>
@@ -15,13 +16,13 @@
   <% end %>
 
   <%= form.label(:username, "Username:") %>
-  <%= form.text_field :username, placeholder: "min 4 characters" %>
+  <%= form.text_field :username %>
   <br>
   <%= form.label(:email, "Email:") %>
-  <%= form.email_field :email, placeholder: "example@mail.com" %>
+  <%= form.email_field :email, value: "", placeholder: "Modify your Email" %>
   <br>
   <%= form.label(:password, "Password:") %>
-  <%= form.password_field :password, placeholder: "min 8 characters" %>
+  <%= form.password_field :password, placeholder: "Modify your password" %>
   <br>
   <%= form.submit %>
 <% end %>
