@@ -1,11 +1,11 @@
-<h1>Create New User</h1>
+<h1>New User: </h1>
 
 <%= form_with model: @user do |form| %>
-  <%= label(:user, :username, "Username") %>
+  <%= form.label(:username, "Username:") %>
   <%= form.text_field :username %> <br>
-  <%= label(:user, :email, "Email") %>
+  <%= form.label(:email, "Email:") %>
   <%= form.email_field :email %> <br>
-  <%= label(:user, :password, "Password") %>
+  <%= form.label(:password, "Password:") %>
   <%= form.password_field :password %> <br>
   <%= form.submit %>
 <% end %>
